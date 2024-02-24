@@ -81,25 +81,43 @@ $(document).ready(function () {
         }
     });
 
-    $('input[type="submit"]').click(function(e) {
-        e.preventDefault(); // Evita o envio do formulário
+    $('input[type="submit"]').click(function (e) {
+        e.preventDefault();
 
-        if ($('#razaoSocial').val() && $('#cnpj').val() && $('#cidade').val() && $('#estado').val() && $('#cep').val()) {
+        if ($('#razaoSocial').val() !== '' && $('#cnpj').val() !== '') {
             let data = {
-                campo1: $('#razaoSocial').val(),
-                campo2: $('#cnpj').val(),
-                campo3: $('#nomeFantasia').val(),
-                campo4: $('#cidade').val(),
-                campo5: $('#estado').val(),
-                campo6: $('#cep').val(),
-                // Adicione mais campos conforme necessário
+                razaoSocial: $('#razaoSocial').val(),
+                cnpj: $('#cnpj').val(),
+                nomeFantasia: $('#nomeFantasia').val(),
+                cidade: $('#cidade').val(),
+                estado: $('#estado').val(),
+                cep: $('#cep').val(),
+                inscricaoEstadual: $('#inscricaoEstadual').val(),
+                inscricaoMunicipal: $('#inscricaoMunicipal').val(),
+                telefone: $('#telefone').val(),
+                email: $('#email').val(),
+                complemento: $('#complemento').val(),
+                endereco: $('#endereco').val(),
+                numero: $('#numero').val(),
+                bairro: $('#bairro').val(),
+                nomedaPessoadeContato: $('#nomedaPessoadeContato').val(),
+                produtos: {
+                    produto: $('#produto').val(),
+                    undMedida: $('#undMedida').val(),
+                    qdtdeEmEstoque: $('#qdtdeEmEstoque').val(),
+                    valorUnitario: $('#valorUnitario').val(),
+                    valorTotal: $('#valorTotal').val()
+                },
+                anexos: {
+                    anexo: $('#formFileMultiple').val()
+                }
             };
 
             let json = JSON.stringify(data);
 
-            console.log(json); // Mostra o JSON no console
+            console.log(json);
         } else {
-            alert('Por favor, preencha todos os campos obrigatórios.');
+            alert('Por favor, preencha todos os campos.');
         }
     });
 
