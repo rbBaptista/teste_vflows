@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    outline: 1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color);
+    font-family: 'Tektur', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 50px auto;
+    background: #F2A74B;
+    padding: 20px;
+    border-radius: 10px;
+}
